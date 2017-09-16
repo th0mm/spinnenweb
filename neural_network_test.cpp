@@ -1,25 +1,35 @@
+//een class voor de neuronen
 class Sigmoid {
     private:
-    int layer;
-    int number;
+    //de bias, een pointer naar een vector van alle biases om makkelijk te kunnen rekenen
     float bias;
-    std::vector<int> weights;
-    std::vector<int> inputs;
+    
+    //een vector met alle weights op volgorde
+    std::vector<float *> weights;
+    
     public:
-    void setLocation(int layr, int Number){
-        layer = layr;
-        number = Number;
+    //om de het adres uit de algemene biasvector van de bias in te stellen
+    void setBias(float *biasToPointTo){
+        bias = *biasToPointTo;
     }
-    void setBias(adres){
-        bias = *adres;
+    //...
+    void setWeights(vector<float *> weightVector, int start, int end){
+        for(int i = start; i < end; i++){
+            std::weights.push_back(*weightVector.at(i));
+        }
+    }
+    //
+    float calcOutput(vector<float> input){
+        //...
     }
 }
 
-//een class layer
+//een class voor de layers
 class Layer{
     private:
     int layer;
     std::vector<Sigmoid *> sigmoids; //sigmoids.push_back(&<naamvansigmoid>)
+    std::vector<inputs>
     public:
     void addSigmoid(Sigmoid *sigmoid){
         sigmoids.push_back(&sigmoid);
