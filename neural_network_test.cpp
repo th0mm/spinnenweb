@@ -1,5 +1,5 @@
-include <iostream>
-include <vector>
+//include <iostream>
+//include <vector>
 
 class Sigmoid {
     private:
@@ -33,7 +33,8 @@ class Network{
     private:
     std::vector<Layer *> layers;
 }
-int main(){
+
+/*int main(){
     
     return 0;
-}
+}*/
